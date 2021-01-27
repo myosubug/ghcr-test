@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker Push
-  run: |
-       echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-       docker build . --tag ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
-       docker push ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
+      run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+           docker build . --tag ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
+           docker push ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
