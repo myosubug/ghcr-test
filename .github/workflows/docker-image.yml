@@ -13,5 +13,5 @@ jobs:
     - name: Docker Push
   run: |
        echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-       docker build . --tag ghcr.io/mysticrenji/react-netcore:$GITHUB_SHA
-       docker push ghcr.io/mysticrenji/react-netcore:$GITHUB_SHA
+       docker build . --tag ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
+       docker push ghcr.io/myosubug/ghcr-test:$GITHUB_SHA
